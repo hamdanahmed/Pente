@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import GUI.CustomCanvas?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="BorderPane_" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="818.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainController">
+   <top>
+      <MenuBar prefHeight="25.0" prefWidth="818.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Game">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#newGame" text="New">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem id="quitMenuItem_" mnemonicParsing="false" onAction="#QuitProgram" text="Quit">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+               <accelerator>
+                  <KeyCodeCombination alt="DOWN" code="G" control="UP" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Options">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#OpenOptionsDialog" text="Game Variations" />
+              <MenuItem mnemonicParsing="false" onAction="#OpenPlayerDialog" text="Choose Player Mode" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#OpenHelpDialog" text="Game Modes" />
+              <MenuItem mnemonicParsing="false" onAction="#OpenAboutDialog" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="769.0" spacing="40.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Label fx:id="blackCaptures_" />
+            <Circle fx:id="black_" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="62.0" text="Timer" textAlignment="RIGHT" />
+            <Label fx:id="timerLabel_" text="0" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#resetGame" text="Restart Game" textAlignment="CENTER">
+               <tooltip>
+                  <Tooltip text="Click to restart the game" />
+               </tooltip></Button>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="114.0" text="Moves" />
+            <Label fx:id="moveCountLabel_" text="0" />
+            <Circle fx:id="white_" fill="WHITE" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <HBox>
+               <children>
+                  <Label fx:id="gameVariantLabel_" alignment="CENTER" prefHeight="17.0" prefWidth="293.0" text="gameVariantLabel" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="playerLabel_" alignment="CENTER" prefHeight="17.0" prefWidth="199.0" text="playerLabel" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="playerModeLabel_" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="252.0" text="playerModeLabel" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <CustomCanvas fx:id="canvas_" height="760.0" onMousePressed="#mousePressed" width="760.0" />
+            <HBox>
+               <children>
+                  <Label fx:id="blackCaptures_" alignment="CENTER" prefHeight="17.0" prefWidth="333.0" text="0" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="160.0" text="Captured Pieces" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="whiteCaptures_" alignment="CENTER" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="284.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="HelpDialog_" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="678" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AboutDialogCTL">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="46.0" prefWidth="347.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="OK_" mnemonicParsing="false" onAction="#CloseDialog" text="Exit" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <Text fx:id="text_" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose the Variation for Help" textAlignment="CENTER" wrappingWidth="500.0" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+   </top>
+</BorderPane>

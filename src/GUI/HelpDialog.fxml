@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="HelpDialog_" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="192.0" prefWidth="347.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HelpDialogCTL">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="46.0" prefWidth="347.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="OK_" mnemonicParsing="false" onAction="#CloseDialog" text="Exit" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="getHelp_" mnemonicParsing="false" text="GetHelp">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ChoiceBox fx:id="helpOptionsBox_" prefWidth="150.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </ChoiceBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <Text fx:id="text_" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose the Variation for Help" textAlignment="CENTER" wrappingWidth="340.0" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+   </top>
+</BorderPane>
